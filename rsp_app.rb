@@ -10,22 +10,14 @@ class Playing < Sinatra::Base
     erb :index
   end
 
-  post "/movement" do
-    session[:player_name] = params[:name]
-    redirect "/ask_movement"
+  post "/p1_movement" do
+    session[:player_1_name]= params[:player_1_name]
+    session[:player_2_name]= params[:player_2_name]
+    redirect "/p1_asking"
   end
 
-  get "/ask_movement" do
-    erb :askMovement
-  end
-
-  post '/showResult' do
-    @player_1 = Player.new(session[:player_name], params[:movement])
-    @server_player = Player.new("computer",
-      RandomMovement.new().random_movement)
-    @game = Game.new(@player_1, @server_player)
-    @message = @game.winner_term
-    erb :result
+  get "/p1_asking" do
+    erb :p1_asking
   end
 
   run! if app_file == $0

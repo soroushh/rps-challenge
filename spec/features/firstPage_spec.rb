@@ -1,6 +1,6 @@
-feature "Asking the name when visiting the first pafe." do
-  scenario "When visiting the first page, the name of the person is asked." do
+feature "The names of players is aksed in the first page." do
+  scenario "Both of players should enter their names in the required areas." do
     visit "/"
-    expect(page).to have_content "Please enter your name."
+    expect(page).to have_content "Please enter your names."
   end
 end

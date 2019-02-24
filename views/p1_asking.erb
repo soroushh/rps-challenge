@@ -16,13 +16,6 @@
  </style>
 </head>
 <body >
-<p> Please enter your names. </p>
-<div>
-<form action="/p1_movement" method="post">
-  <input type = "text" name="player_1_name">
-  <input type = "text" name = "player_2_name">
-  <input type ="submit" value = "Submit">
-</form>
-</div>
+<div> <%= session[:player_1_name]%> vs. <%= session[:player_2_name] %> </div>
 </body>
 </html>
