@@ -12,6 +12,22 @@ class Game
     return "#{@game_hash[the_winner_movement]} won the game"
   end
 
+  def self.player_1_name
+    @player_1_name ||= []
+  end
+
+  def self.player_2_name
+    @player_2_name ||= []
+  end
+
+  def self.player_1_movement
+    @player_1_movement ||= []
+  end
+
+  def self.player_2_movement
+    @player_2_movement ||= []
+  end
+
   private
   def the_winner_movement
     return "paper" if @game_movements.sort == ["paper", "rock"]

@@ -11,16 +11,17 @@ class Playing < Sinatra::Base
   end
 
   post "/movement" do
-    session[:player_name] = params[:name]
+    Game.player_1_name.unshift(params[:name])
     redirect "/ask_movement"
   end
 
   get "/ask_movement" do
-    erb :askMovement
+    erb :ask_movement
   end
 
   post '/showResult' do
-    @player_1 = Player.new(session[:player_name], params[:movement])
+    Game.player_1_movement.unshift(params[:movement])
+    @player_1 = Player.new(Game.player_1_name[0], Game.player_1_movement[0])
     @server_player = Player.new("computer",
       RandomMovement.new().random_movement)
     @game = Game.new(@player_1, @server_player)
