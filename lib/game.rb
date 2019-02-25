@@ -13,7 +13,11 @@ class Game
   end
 
   def self.player_1_name
-    @player_1_name ||= []
+    @player_1_name ||= nil
+  end
+
+  def self.set_player_1_name=(name)
+    @player_1_name = name
   end
 
   def self.player_2_name

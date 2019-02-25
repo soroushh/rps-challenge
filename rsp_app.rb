@@ -11,7 +11,7 @@ class Playing < Sinatra::Base
   end
 
   post "/movement" do
-    Game.player_1_name.unshift(params[:name])
+    Game.set_player_1_name=(params[:name])
     redirect "/ask_movement"
   end
 
@@ -21,7 +21,7 @@ class Playing < Sinatra::Base
 
   post '/showResult' do
     Game.player_1_movement.unshift(params[:movement])
-    @player_1 = Player.new(Game.player_1_name[0], Game.player_1_movement[0])
+    @player_1 = Player.new(Game.player_1_name, Game.player_1_movement[0])
     @server_player = Player.new("computer",
       RandomMovement.new().random_movement)
     @game = Game.new(@player_1, @server_player)
