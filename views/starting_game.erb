@@ -16,11 +16,9 @@
  </style>
 </head>
 <body >
-<div>
-<%= @winner_term %>
-<form action = "/" >
-  <input type ="submit" value = "Play again">
+<div> <%= session[:player_1_name]%> vs. <%= session[:player_2_name] %> </div>
+<form action = "/p1_asking" method = "post">
+<div> <input type = "submit" value = "Start_game" > </div>
 </form>
-</div>
 </body>
 </html>

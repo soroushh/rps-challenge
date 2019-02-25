@@ -17,9 +17,9 @@
 </head>
 <body >
 <div>
-  <%= session[:player_1_name]%> please enter your movement.
-  <form action="/p2_asking" method = "post">
-  <select name="player_1_movement">
+  <%= session[:player_2_name]%> please enter your movement.
+  <form action="/result" method = "post">
+  <select name="player_2_movement">
     <option value="scissors">scissors</option>
     <option value="paper">paper</option>
     <option value="rock">rock</option>
