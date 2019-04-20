@@ -1,5 +1,11 @@
 # RPS Challenge
 
+
+The picture of the modelling of the exercise is in the below:
+
+<img src="Model_of_practicing.png" /> 
+
+
 Instructions
 -------
 
